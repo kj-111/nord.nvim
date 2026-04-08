@@ -84,7 +84,7 @@ theme.loadEditor = function()
 
 	local editor = {
 		NormalFloat = { fg = nord.nord4_gui, bg = nord.float }, -- normal text and background color
-		FloatBorder = { fg = nord.nord9_gui, bg = nord.float }, -- normal text and background color
+		FloatBorder = { fg = nord.nord1_gui, bg = nord.float }, -- normal text and background color
 		ColorColumn = { fg = nord.none, bg = nord.nord1_gui }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = nord.nord1_gui }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = nord.nord4_gui, bg = nord.none, style = "reverse" }, -- the character under the cursor
@@ -176,7 +176,7 @@ theme.loadEditor = function()
 		BufferVisibleTarget = { bg = nord.nord2_gui, fg = nord.nord11_gui },
 
 		-- nvim-notify
-		NotifyDEBUGBorder = { fg = nord.nord9_gui },
+		NotifyDEBUGBorder = { fg = nord.nord1_gui },
 		NotifyDEBUGIcon = { fg = nord.nord3_gui },
 		NotifyDEBUGTitle = { fg = nord.nord3_gui },
 		NotifyERRORBorder = { fg = nord.nord11_gui },
@@ -524,9 +524,9 @@ theme.loadPlugins = function()
 		GitSignsCurrentLineBlame = { fg = nord.nord3_gui_bright, style = bold },
 
 		-- Telescope
-		TelescopePromptBorder = { fg = nord.nord9_gui },
-		TelescopeResultsBorder = { fg = nord.nord9_gui },
-		TelescopePreviewBorder = { fg = nord.nord9_gui },
+		TelescopePromptBorder = { fg = nord.nord1_gui },
+		TelescopeResultsBorder = { fg = nord.nord1_gui },
+		TelescopePreviewBorder = { fg = nord.nord1_gui },
 		TelescopeSelectionCaret = { fg = nord.nord9_gui },
 		TelescopeSelection = { fg = nord.nord6_gui, bg = nord.nord2_gui },
 		TelescopeMatching = { link = 'Search' },
@@ -571,17 +571,17 @@ theme.loadPlugins = function()
 		DiagnosticInformation = { fg = nord.nord10_gui },
 		DiagnosticHint = { fg = nord.nord9_gui },
 		DiagnosticTruncateLine = { fg = nord.nord4_gui },
-		LspFloatWinBorder = { fg = nord.nord9_gui, bg = nord.float },
-		LspSagaDefPreviewBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LspFloatWinBorder = { fg = nord.nord1_gui, bg = nord.float },
+		LspSagaDefPreviewBorder = { fg = nord.nord1_gui, bg = nord.float },
 		DefinitionIcon = { fg = nord.nord7_gui },
 		TargetWord = { fg = nord.nord6_gui, style = 'bold' },
 		-- LspSaga code action
 		LspSagaCodeActionTitle = { link = 'Title' },
-		LspSagaCodeActionBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LspSagaCodeActionBorder = { fg = nord.nord1_gui, bg = nord.float },
 		LspSagaCodeActionTrunCateLine = { link = 'LspSagaCodeActionBorder' },
 		LspSagaCodeActionContent = { fg = nord.nord4_gui },
 		-- LspSag finder
-		LspSagaLspFinderBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LspSagaLspFinderBorder = { fg = nord.nord1_gui, bg = nord.float },
 		LspSagaAutoPreview = { fg = nord.nord4_gui },
 		LspSagaFinderSelection = { fg = nord.nord6_gui, bg = nord.nord2_gui },
 		TargetFileName = { fg = nord.nord4_gui },
@@ -597,20 +597,20 @@ theme.loadPlugins = function()
 		Implements = { fg = nord.nord15_gui, bold = true },
 		ImplementsCount = { fg = nord.nord10_gui },
 		-- LspSaga finder spinner
-		FinderSpinnerBorder = { fg = nord.nord9_gui, bg = nord.float },
+		FinderSpinnerBorder = { fg = nord.nord1_gui, bg = nord.float },
 		FinderSpinnerTitle = { link = 'Title' },
 		FinderSpinner = { fg = nord.nord8_gui, bold = true },
 		FinderPreviewSearch = { link = 'Search' },
 		-- LspSaga definition
-		DefinitionBorder = { fg = nord.nord9_gui, bg = nord.float },
+		DefinitionBorder = { fg = nord.nord1_gui, bg = nord.float },
 		DefinitionArrow = { fg = nord.nord8_gui },
 		DefinitionSearch = { link = 'Search' },
 		DefinitionFile = { fg = nord.nord4_gui, bg = nord.float },
 		-- LspSaga hover
-		LspSagaHoverBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LspSagaHoverBorder = { fg = nord.nord1_gui, bg = nord.float },
 		LspSagaHoverTrunCateLine = { link = 'LspSagaHoverBorder' },
 		-- Lsp rename
-		LspSagaRenameBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LspSagaRenameBorder = { fg = nord.nord1_gui, bg = nord.float },
 		LspSagaRenameMatch = { fg = nord.nord6_gui, bg = nord.nord9_gui },
 		-- Lsp diagnostic
 		LspSagaDiagnosticSource = { link = 'Comment' },
@@ -622,7 +622,7 @@ theme.loadPlugins = function()
 		LspSagaWarnTrunCateLine = { link = 'DiagnosticWarn' },
 		LspSagaInfoTrunCateLine = { link = 'DiagnosticInfo' },
 		LspSagaHintTrunCateLine = { link = 'DiagnosticHint' },
-		LspSagaDiagnosticBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LspSagaDiagnosticBorder = { fg = nord.nord1_gui, bg = nord.float },
 		LspSagaDiagnosticHeader = { fg = nord.nord4_gui },
 		DiagnosticQuickFix = { fg = nord.nord14_gui, bold = true },
 		DiagnosticMap = { fg = nord.nord15_gui },
@@ -630,7 +630,7 @@ theme.loadPlugins = function()
 		LspSagaDiagnosticTruncateLine = { link = 'LspSagaDiagnosticBorder' },
 		ColInLineDiagnostic = { link = 'Comment' },
 		-- LspSaga signture help
-		LspSagaSignatureHelpBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LspSagaSignatureHelpBorder = { fg = nord.nord1_gui, bg = nord.float },
 		LspSagaShTrunCateLine = { link = 'LspSagaSignatureHelpBorder' },
 		-- Lspsaga lightbulb
 		LspSagaLightBulb = { link = 'DiagnosticSignHint' },
@@ -639,7 +639,7 @@ theme.loadPlugins = function()
 		-- LspSaga float
 		LspSagaBorderTitle = { link = 'Title' },
 		-- LspSaga Outline
-		LSOutlinePreviewBorder = { fg = nord.nord9_gui, bg = nord.float },
+		LSOutlinePreviewBorder = { fg = nord.nord1_gui, bg = nord.float },
 		OutlineIndentEvn = { fg = nord.nord15_gui },
 		OutlineIndentOdd = { fg = nord.nord12_gui },
 		OutlineFoldPrefix = { fg = nord.nord11_gui },
