@@ -43,22 +43,31 @@ theme.loadSyntax = function()
 		Delimiter = { fg = nord.nord6_gui }, -- character that needs attention like , or .
 		SpecialComment = { fg = nord.nord8_gui }, -- special things inside a comment
 		Debug = { fg = nord.nord11_gui }, -- debugging statements
-		Underlined = { fg = nord.nord14_gui, bg = nord.none, style = "underline" }, -- text that stands out, HTML links
+		Underlined = { fg = nord.nord9_gui, bg = nord.none, style = "underline" }, -- text that stands out, HTML links
 		Ignore = { fg = nord.nord1_gui }, -- left blank, hidden
 		Todo = { fg = nord.nord13_gui, bg = nord.none, style = bold_italic }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		Conceal = { fg = nord.none, bg = nord.nord0_gui },
-		htmlLink = { fg = nord.nord14_gui, style = "underline" },
-		markdownH1Delimiter = { fg = nord.nord8_gui },
-		markdownH2Delimiter = { fg = nord.nord11_gui },
-		markdownH3Delimiter = { fg = nord.nord14_gui },
-		htmlH1 = { fg = nord.nord8_gui, style = bold },
-		htmlH2 = { fg = nord.nord11_gui, style = bold },
-		htmlH3 = { fg = nord.nord14_gui, style = bold },
-		htmlH4 = { fg = nord.nord15_gui, style = bold },
-		htmlH5 = { fg = nord.nord9_gui, style = bold },
-		markdownH1 = { fg = nord.nord8_gui, style = bold },
-		markdownH2 = { fg = nord.nord11_gui, style = bold },
-		markdownH3 = { fg = nord.nord14_gui, style = bold },
+		Link = { fg = nord.nord9_gui, style = "underline" },
+		htmlLink = { link = "Link" },
+		mkdLink = { link = "Link" },
+		markdownLinkText = { link = "Link" },
+		markdownH1Delimiter = { fg = nord.nord11_gui },
+		markdownH2Delimiter = { fg = nord.nord12_gui },
+		markdownH3Delimiter = { fg = nord.nord13_gui },
+		htmlH1 = { fg = nord.nord11_gui, style = bold },
+		htmlH2 = { fg = nord.nord12_gui, style = bold },
+		htmlH3 = { fg = nord.nord13_gui, style = bold },
+		htmlH4 = { fg = nord.nord14_gui, style = bold },
+		htmlH5 = { fg = nord.nord8_gui, style = bold },
+		htmlH6 = { fg = nord.nord15_gui, style = bold },
+		markdownH1 = { fg = nord.nord11_gui, style = bold },
+		markdownH2 = { fg = nord.nord12_gui, style = bold },
+		markdownH3 = { fg = nord.nord13_gui, style = bold },
+		markdownH4 = { fg = nord.nord14_gui, style = bold },
+		markdownH5 = { fg = nord.nord8_gui, style = bold },
+		markdownH6 = { fg = nord.nord15_gui, style = bold },
+		mkdCodeStart = { fg = nord.nord8_gui, style = bold },
+		mkdCodeEnd = { fg = nord.nord8_gui, style = bold },
 		Error = { fg = nord.nord11_gui, bg = nord.none, style = bold_underline }, -- any erroneous construct with bold
 		Comment = { fg = nord.nord3_gui_bright, style = italic }, -- italic comments
 		Conditional = { fg = nord.nord9_gui, style = italic }, -- italic if, then, else, endif, switch, etc.
@@ -94,6 +103,7 @@ theme.loadEditor = function()
 		NonText = { fg = nord.nord1_gui },
 		Pmenu = { fg = nord.nord4_gui, bg = nord.nord2_gui },
 		PmenuSel = { fg = nord.nord4_gui, bg = nord.nord10_gui },
+		PmenuBorder = { fg = nord.nord4_gui, bg = nord.float },
 		PmenuSbar = { fg = nord.nord4_gui, bg = nord.nord2_gui },
 		PmenuThumb = { fg = nord.nord4_gui, bg = nord.nord4_gui },
 		Question = { fg = nord.nord14_gui },
@@ -325,10 +335,33 @@ theme.loadTreeSitter = function()
 	treesitter["@boolean"] = { fg = nord.nord9_gui, style = bold }
 	treesitter["@constant.builtin"] = { fg = nord.nord7_gui, style = bold }
 	treesitter["@constant.macro"] = { fg = nord.nord7_gui, style = bold }
-	treesitter["@text.title"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
-	treesitter["@text.strong"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
-	-- Comments
-	treesitter.TSComment = { fg = nord.nord3_gui_bright, style = italic }
+		treesitter["@text.title"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
+		treesitter["@text.strong"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
+		treesitter["@text.uri"] = { fg = nord.nord9_gui, style = "underline" }
+		treesitter["@punctuation.special.markdown"] = { fg = nord.nord12_gui, style = bold }
+		treesitter["@text.todo.unchecked"] = { fg = nord.nord9_gui }
+		treesitter["@text.todo.checked"] = { fg = nord.nord14_gui }
+		treesitter["@text.literal.markdown_inline"] = { fg = nord.nord9_gui, bg = nord.nord1_gui }
+		treesitter["@text.literal.markdown"] = { fg = nord.nord4_gui }
+		treesitter["@markup.link"] = { fg = nord.nord9_gui, style = "underline" }
+		treesitter["@markup.link.label"] = { fg = nord.nord9_gui, style = "underline" }
+		treesitter["@markup.link.url"] = { fg = nord.nord9_gui, style = "underline" }
+		treesitter["@markup.raw"] = { fg = nord.nord9_gui, bg = nord.nord1_gui }
+		treesitter["@markup.raw.block"] = { bg = nord.nord1_gui }
+		treesitter["@markup.heading.1"] = { fg = nord.nord11_gui, style = bold }
+		treesitter["@markup.heading.2"] = { fg = nord.nord12_gui, style = bold }
+		treesitter["@markup.heading.3"] = { fg = nord.nord13_gui, style = bold }
+		treesitter["@markup.heading.4"] = { fg = nord.nord14_gui, style = bold }
+		treesitter["@markup.heading.5"] = { fg = nord.nord8_gui, style = bold }
+		treesitter["@markup.heading.6"] = { fg = nord.nord15_gui, style = bold }
+		treesitter["@markup.heading.1.delimiter"] = { fg = nord.nord11_gui, style = bold }
+		treesitter["@markup.heading.2.delimiter"] = { fg = nord.nord12_gui, style = bold }
+		treesitter["@markup.heading.3.delimiter"] = { fg = nord.nord13_gui, style = bold }
+		treesitter["@markup.heading.4.delimiter"] = { fg = nord.nord14_gui, style = bold }
+		treesitter["@markup.heading.5.delimiter"] = { fg = nord.nord8_gui, style = bold }
+		treesitter["@markup.heading.6.delimiter"] = { fg = nord.nord15_gui, style = bold }
+		-- Comments
+		treesitter.TSComment = { fg = nord.nord3_gui_bright, style = italic }
 	-- Conditionals
 	treesitter.TSConditional = { fg = nord.nord9_gui, style = italic } -- For keywords related to conditionnals.
 	-- Function names
@@ -623,6 +656,16 @@ theme.loadPlugins = function()
 		CmpItemAbbrMatchFuzzy = { fg = nord.nord5_gui, style = bold },
 		CmpItemAbbr = { fg = nord.nord4_gui },
 		CmpItemMenu = { fg = nord.nord14_gui },
+		BlinkCmpLabel = { fg = nord.nord4_gui },
+		BlinkCmpLabelDeprecated = { fg = nord.nord3_gui_bright, style = "strikethrough" },
+		BlinkCmpLabelMatch = { fg = nord.nord9_gui, style = bold },
+		BlinkCmpLabelDescription = { link = "Comment" },
+		BlinkCmpDoc = { fg = nord.nord4_gui, bg = nord.float },
+		BlinkCmpMenuBorder = { fg = nord.nord4_gui, bg = nord.float },
+		BlinkCmpMenuSelection = { bg = nord.nord10_gui },
+		BlinkCmpDocBorder = { fg = nord.nord4_gui, bg = nord.float },
+		BlinkCmpSignatureHelpBorder = { fg = nord.nord4_gui, bg = nord.float },
+		BlinkCmpGhostText = { fg = nord.nord3_gui_bright },
 
 		-- Indent Blankline
 		IndentBlanklineChar = { fg = nord.nord3_gui },
@@ -630,16 +673,16 @@ theme.loadPlugins = function()
 
 		-- headline
 		-- bg = (10 * nord0 + fg) / 11
-		Headline1 = { fg = nord.nord12_gui, bg = "#3d3c44", bold = true },
-		Headline2 = { fg = nord.nord13_gui, bg = "#3f4247", bold = true },
-		Headline3 = { fg = nord.nord14_gui, bg = "#394147", bold = true },
-		Headline4 = { fg = nord.nord9_gui, bg = "#363e4c", bold = true },
-		Headline5 = { fg = nord.nord15_gui, bg = "#3a3c4a", bold = true },
-		Headline6 = { fg = nord.nord4_gui, bg = "#3d434f", bold = true },
+		Headline1 = { fg = nord.nord11_gui, bg = "#3d3c44", style = bold },
+		Headline2 = { fg = nord.nord12_gui, bg = "#3f4247", style = bold },
+		Headline3 = { fg = nord.nord13_gui, bg = "#394147", style = bold },
+		Headline4 = { fg = nord.nord14_gui, bg = "#363e4c", style = bold },
+		Headline5 = { fg = nord.nord8_gui, bg = "#3a3c4a", style = bold },
+		Headline6 = { fg = nord.nord15_gui, bg = "#3d434f", style = bold },
 
-		Quote = { fg = nord.nord2_gui },
+		Quote = { fg = nord.nord3_gui_bright },
 		CodeBlock = { bg = nord.nord1_gui },
-		Dash = { nord.nord10_gui, bold = true },
+		Dash = { fg = nord.nord10_gui, style = bold },
 
 		-- Illuminate
 		illuminatedWord = { bg = nord.nord3_gui },
