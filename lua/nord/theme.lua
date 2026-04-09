@@ -291,7 +291,7 @@ theme.loadTreeSitter = function()
 		["@attribute"] = { fg = nord.nord15_gui },
 		["@error"] = { fg = nord.nord11_gui },
 		["@exception"] = { fg = nord.nord15_gui },
-		["@funtion.macro"] = { fg = nord.nord7_gui },
+		["@function.macro"] = { fg = nord.nord7_gui },
 		["@include"] = { fg = nord.nord9_gui },
 		["@label"] = { fg = nord.nord15_gui },
 		["@operator"] = { fg = nord.nord9_gui },
@@ -299,11 +299,14 @@ theme.loadTreeSitter = function()
 		["@punctuation.delimiter"] = { fg = nord.nord8_gui },
 		["@punctuation.bracket"] = { fg = nord.nord8_gui },
 		["@punctuation.special"] = { fg = nord.nord8_gui },
+		["@string.special"] = { fg = nord.nord13_gui },
 		["@symbol"] = { fg = nord.nord15_gui },
 		["@type"] = { fg = nord.nord9_gui },
 		["@type.builtin"] = { fg = nord.nord9_gui },
 		["@tag"] = { fg = nord.nord4_gui },
+		["@tag.attribute"] = { fg = nord.nord15_gui },
 		["@tag.delimiter"] = { fg = nord.nord15_gui },
+		["@markup.math"] = { fg = nord.nord7_gui },
 		["@text"] = { fg = nord.nord4_gui },
 		["@text.reference"] = { fg = nord.nord15_gui, style = bold },
 		["@text.emphasis"] = { fg = nord.nord10_gui, style = italic },
@@ -312,19 +315,6 @@ theme.loadTreeSitter = function()
 		["@text.uri"] = { fg = nord.nord14_gui, style = "underline" },
 		["@text.strike"] = { fg = nord.nord4_gui, style = "strikethrough" },
 		["@text.math"] = { fg = nord.nord7_gui },
-
-		-- @todo Missing highlights
-		-- @function.call
-		-- @method.call
-		-- @type.qualifier
-		-- @text.math (e.g. for LaTeX math environments)
-		-- @text.environment (e.g. for text environments of markup languages)
-		-- @text.environment.name (e.g. for the name/the string indicating the type of text environment)
-		-- @text.note
-		-- @text.warning
-		-- @text.danger
-		-- @tag.attribute
-		-- @string.special
 	}
 
 	treesitter.TSVariableBuiltin = { fg = nord.nord4_gui, style = bold }
@@ -392,9 +382,15 @@ theme.loadTreeSitter = function()
 	treesitter.TSCharacter = { fg = nord.nord14_gui, style = italic } -- For characters.
 
 	treesitter["@comment"] = { fg = nord.nord3_gui_bright, style = italic }
+	treesitter["@comment.note"] = { fg = nord.nord10_gui }
+	treesitter["@comment.warning"] = { fg = nord.nord15_gui }
+	treesitter["@comment.error"] = { fg = nord.nord11_gui }
 	treesitter["@conditional"] = { fg = nord.nord9_gui, style = italic }
 	treesitter["@function"] = { fg = nord.nord8_gui, style = italic }
+	treesitter["@function.call"] = { fg = nord.nord8_gui, style = italic }
 	treesitter["@method"] = { fg = nord.nord8_gui, style = italic }
+	treesitter["@function.method"] = { fg = nord.nord8_gui, style = italic }
+	treesitter["@function.method.call"] = { fg = nord.nord8_gui, style = italic }
 	treesitter["@function.builtin"] = { fg = nord.nord8_gui, style = italic }
 	treesitter["@namespace"] = { fg = nord.nord4_gui, style = italic }
 	treesitter["@field"] = { fg = nord.nord4_gui, style = italic }
