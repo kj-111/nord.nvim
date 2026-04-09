@@ -51,6 +51,8 @@ theme.loadSyntax = function()
 		htmlLink = { link = "Link" },
 		mkdLink = { link = "Link" },
 		markdownLinkText = { link = "Link" },
+		markdownListMarker = { fg = nord.nord10_gui, style = bold },
+		markdownOrderedListMarker = { link = "markdownListMarker" },
 		markdownH1Delimiter = { fg = nord.nord11_gui },
 		markdownH2Delimiter = { fg = nord.nord12_gui },
 		markdownH3Delimiter = { fg = nord.nord13_gui },
@@ -340,6 +342,9 @@ theme.loadTreeSitter = function()
 		treesitter["@text.title"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
 		treesitter["@text.strong"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
 		treesitter["@text.uri"] = { fg = nord.nord9_gui, style = "underline" }
+		treesitter["@markup.list"] = { fg = nord.nord10_gui, style = bold }
+		treesitter["@markup.list.checked"] = { fg = nord.nord10_gui, style = bold }
+		treesitter["@markup.list.unchecked"] = { fg = nord.nord10_gui, style = bold }
 		treesitter["@punctuation.special.markdown"] = { fg = nord.nord12_gui, style = bold }
 		treesitter["@text.todo.unchecked"] = { fg = nord.nord9_gui }
 		treesitter["@text.todo.checked"] = { fg = nord.nord14_gui }
