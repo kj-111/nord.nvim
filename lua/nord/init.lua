@@ -8,7 +8,7 @@ local bufferline = require("bufferline.theme")
 
 -- Load the theme
 local set = function()
-	util.load()
+  util.load()
 end
 
 return { set = set, bufferline = bufferline }
