@@ -90,7 +90,6 @@ theme.loadEditor = function()
     ColorColumn = { fg = nord.none, bg = nord.nord1_gui }, -- used for the columns set with 'colorcolumn'
     Conceal = { fg = nord.nord1_gui }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     YankHighlight = { bg = nord.nord10_gui },
-    MarksGutter = { fg = nord.nord4_gui },
     Cursor = { fg = nord.nord4_gui, bg = nord.none, style = "reverse" }, -- the character under the cursor
     CursorIM = { fg = nord.nord5_gui, bg = nord.none, style = "reverse" }, -- like Cursor, but used when in IME mode
     Directory = { fg = nord.nord7_gui, bg = nord.none }, -- directory names (and other special names in listings)
